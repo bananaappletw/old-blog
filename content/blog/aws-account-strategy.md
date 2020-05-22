@@ -1,7 +1,9 @@
 ---
-title: AWS account management strategy
-categories: []
-tags: []
+title: AWS account strategy
+categories:
+- computer science
+tags:
+- aws
 date: 2020-05-22T18:13:11Z
 
 ---
