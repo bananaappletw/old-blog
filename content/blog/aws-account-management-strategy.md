@@ -2,7 +2,7 @@
 title: AWS account management strategy
 categories: []
 tags: []
-date: 
+date: 2020-05-22T18:13:11Z
 
 ---
 ## Reference
