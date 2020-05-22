@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `bananaappletw's blog`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Wei-Bo Chen`,
+      summary: `海參 _(:3」∠)_`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    description: `bananaappletw's blog`,
+    siteUrl: `https://bananaappletw.github.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `bananaappletw`,
     },
   },
   plugins: [
@@ -60,13 +60,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Sea cucumber`,
+        short_name: `Sea cucumber`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `static/profile.jpg`,
       },
     },
     `gatsby-plugin-react-helmet`,
