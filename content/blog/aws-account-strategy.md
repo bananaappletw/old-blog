@@ -55,7 +55,11 @@ AWS Organization 會有一個帳號綁有信用卡資訊叫做 master account(�
 
 在這個 AWS Organization 以外帳號的開銷都由他負責
 
-每個帳戶裡的 Billing 和權限就可以比較簡單的管理
+這樣就可以把每個 team 的帳單分開了(雖然有 tag 可以用只是感覺不太好用)
+
+[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html")
+
+接下來要選擇的就是 Single Sign On 的方法了
 
 ## Switch Role
 
