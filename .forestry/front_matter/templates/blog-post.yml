@@ -16,5 +16,3 @@ fields:
   label: date
   hidden: true
   default: now
-pages:
-- content/blog/aws-account-management-strategy.md
