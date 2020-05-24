@@ -59,6 +59,12 @@ AWS Organization 會有一個帳號綁有信用卡資訊叫做 master account(�
 
 [https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html")
 
+每個 group 掛不同的權限
+
+想要有那個權限就把 user 加到 group 裡
+
+不需要的時候將他移出 group
+
 接下來要選擇的就是 Single Sign On 的方法了
 
 ## Switch Role
