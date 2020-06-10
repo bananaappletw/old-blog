@@ -4,14 +4,14 @@ categories:
 - computer science
 tags:
 - aws
-date: 2020-05-24T12:27:34Z
+date: 2020-05-24T12:27:34.000+00:00
 
 ---
 ## 基本介紹
 
-登入介面會需要 
+登入介面會需要
 
-* Account ID (12 digits) or account alias 
+* Account ID (12 digits) or account alias
 * IAM user name
 
 AWS account: 12 digits 和 account alias 都是獨特的(大部分程式方面都要寫 12 digits 的數字)
@@ -20,7 +20,7 @@ IAM user
 
 * 可以用來登入 console 的帳號
 * 提供 credential 給 CI/CD 跑的帳號
-* 可以自己加或是用 group 的方法掛 IAM policy 
+* 可以自己加或是用 group 的方法掛 IAM policy
 
 IAM role
 
@@ -101,7 +101,7 @@ AWS Organization 會有一個帳號綁有信用卡資訊叫做 master account(�
 
 這和一般我們希望做到的管理有些出入
 
-比較理想的是 google group 和 IAM 的對應
+比較理想的是 Google group 和 IAM 的對應
 
 這個可以參考這個 repo
 
@@ -110,6 +110,8 @@ AWS Organization 會有一個帳號綁有信用卡資訊叫做 master account(�
 使用 GSuite Admin API 做成 google group 和 IAM 的對應
 
 作法是先去找出 google group 裡的 memeber 然後一個一個修改對應到的 IAM role
+
+優點: aws account 填的 email 可以是 Google group 的 email 這樣所有在那個 group 的人都可以收到 email，通常會寄一些資源預警信，所以收信的人必須要有 aws 權限去處理這些事，蠻一致的
 
 缺點: 會把 trust 綁在 Google 上
 
@@ -136,6 +138,8 @@ AWS 本身的 Single Sign On service
 可以做到的就是一個 group 對應多個 IAM policy
 
 你登入後就可以選擇自己想要使用的 aws account 和裡面的 IAM user
+
+缺點: 收 email 方面和 Google apps SSO 相比每次加 user 或移除 user 都要再去 Gsuite group 改一次
 
 ## Reference
 
