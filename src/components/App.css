@@ -1,0 +1,13 @@
+.markdown-body {
+  overflow-x: scroll;
+}
+
+*{
+  /* font-family: 'Special Elite','Noto Sans TC', cursive; */
+  /* font-family: , sans-serif; */
+}
+
+a:visited{
+  text-decoration: none;
+  /* color: unset  */
+}

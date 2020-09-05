@@ -1,53 +1,48 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
+import App from "../components/App"
+import PostSidebar from "../components/PostSidebar"
 import "github-markdown-css";
+import { makeStyles, Typography, Box } from "@material-ui/core"
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
+const useStyles = makeStyles(theme => ({
+  postContainer: {
+    display: 'flex',
+    direction: 'row'
+  },
+  PostSidebar: {
+
+  },
+  post: {
+  }
+}))
+
+const BlogPostTemplate = ({ data, pageContext }) => {
+  const classes = useStyles();
   const { previous, next } = pageContext
+  const markdownRemark = data.markdownRemark
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
-      <article>
-        <header>
-          <h1
-            style={{
-              marginTop: rhythm(1),
-              marginBottom: 0,
-            }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
-        </header>
-        <section class="markdown-body" dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1),
-          }}
-        />
-        <footer>
-          <Bio />
-        </footer>
-      </article>
+    <App
+      title={markdownRemark.frontmatter.title}
+      description={markdownRemark.frontmatter.description || markdownRemark.excerpt}
+    >
+      <Box className={classes.postContainer}>
+        <Box className={classes.PostSidebar}>
+          <PostSidebar headings={markdownRemark.headings} />
+        </Box>
+        <Box className={classes.post}>
+          <header>
+            <Typography variant="h1">
+              {markdownRemark.frontmatter.title}
+            </Typography>
+            <p>
+              {markdownRemark.frontmatter.date}
+            </p>
+          </header>
+          <section className="markdown-body" dangerouslySetInnerHTML={{ __html: markdownRemark.html }} />
+        </Box>
+      </Box>
 
       <nav>
         <ul
@@ -75,7 +70,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </li>
         </ul>
       </nav>
-    </Layout>
+    </App >
   )
 }
 
@@ -91,7 +86,12 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      html          
+      headings {
+        id
+        depth
+        value
+      }
       frontmatter {
         title
         date
